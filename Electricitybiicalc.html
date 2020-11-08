@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Electricity Bill Cal</title>
+		
+	</head>
+	<body>
+		
+
+		<form id="ab">
+			
+		<div style="width:600px;height:600px;border:3px solid #000;background-color:lightyellow;  ">
+			<br>
+					<center><div style="width:450px;height:20px;border:1px solid #000;background-color:lightgray;  ">
+
+			</div>
+		</center>
+			<br>
+			<br>
+			<br><h3 align="center">Domestric Electricity Bill Calculater</h3>
+				<center>	<div style="width:350px;height:300px;border:3px solid #000;background-color:lightyellow; border-radius:25px;" >
+			
+			<br>
+			<br>
+			<center>
+				<p>No of Units Used: &nbsp <input type="number" name="unit" min="0" id="txtunit">
+					
+					Kwh</p>
+<p>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset"  value="clear"  style="border-radius:5px; ">
+							</p>
+							
+							<p>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<center> <div id="bc">
+							<button onclick="electricityBill()">Calculate my Bill</button></p>
+
+							</div></center>
+							 
+                       				
+							<br>
+							<br><center> <table><tr><td>
+							<a href=https://ceb.lk/bill-calculation-commercial/en >More information on how my bill is <br>
+							calculated</a></td>
+							
+								<td></td>
+								<td></td>
+								<td></td>
+
+								<td>
+
+								<a href=https://roar.media/english/life/reports/electricity-bill-calculated-analysis>Go 
+								to CEB web site</a></td>
+			
+
+							</tr>
+
+                             </center></table><center><p><u>Created by :Nafla Naseer</u></p></center>
+                         </center></div>
+						</form></center></div></form>
+
+							<script>
+								function electricityBill(){
+		let unit=Number(document.getElementById('txtunit').value);
+		let amount;
+		
+	
+	if(unit>0 && unit<=30)
+	{
+		amount=unit*7.85+480;
+	}
+	else if(unit>30 && unit<=60)
+	{
+		amount=30*7.85+(unit-30)*7.85+480;
+	}
+	else if(unit>60 && unit<=90)
+	{
+		amount=30*7.85+30*7.85+(unit-60)*10+480;69
+	}
+	else if(unit>90 && unit<=120)
+	{
+		amount=30*7.85+30*7.85+30*10+(unit-90)*27.75+480;
+	}
+	else
+	{
+		amount=30*7.85+30*7.85+30*10+30*27.75+(unit-120)*32+480;
+	}
+	let tValue=document.getElementById('bc');
+	tValue.innerHTML="<h3>your Electricity bill is  "+amount+" Rs</h3>";
+
+
+	}
+		</script>
+		
+	</body>
+</html>
